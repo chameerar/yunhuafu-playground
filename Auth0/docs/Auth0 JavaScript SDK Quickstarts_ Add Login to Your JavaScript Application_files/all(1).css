@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Aeonik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../files/Aeonik-Regular.woff2') format('woff2'),
+    url('../files/Aeonik-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../files/Aeonik-Medium.woff2') format('woff2'),
+    url('../files/Aeonik-Medium.woff') format('woff');
+}
