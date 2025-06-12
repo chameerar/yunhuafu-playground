@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "serve-web-client",
+            "type": "shell",
+            "command": "npx",
+            "args": [
+                "http-server",
+                "-p",
+                "8080",
+                "--cors"
+            ],
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "custom",
+                "pattern": {
+                    "regexp": "^$"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "Starting up http-server",
+                    "endsPattern": "Available on"
+                }
+            }
+        }
+    ]
+} 

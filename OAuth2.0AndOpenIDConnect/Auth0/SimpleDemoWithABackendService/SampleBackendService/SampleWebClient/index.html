@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Auth0 with Custom Backend Section -->
+        <section class="auth-section" id="auth0-backend">
+            <h2>Auth0 + Custom Backend</h2>
+            <button id="auth0BackendBtn">Call Custom Backend API</button>
+            <div id="auth0BackendResult" class="result"></div>
+        </section>
+
+        <!-- Auth0 with Google Drive Section -->
+        <section class="auth-section" id="auth0-drive">
+            <h2>Auth0 + Google Drive</h2>
+            <button id="auth0DriveBtn">Call Google Drive API (via Auth0)</button>
+            <div id="auth0DriveResult" class="result"></div>
+        </section>
+
+        <!-- Direct Google Drive Section -->
+        <section class="auth-section" id="google-drive">
+            <h2>Direct Google Drive</h2>
+            <button id="googleDriveBtn">Call Google Drive API (Direct)</button>
+            <div id="googleDriveResult" class="result"></div>
+        </section>
+    </div>
+    <script src="https://cdn.auth0.com/js/auth0/9.22.2/auth0.min.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
