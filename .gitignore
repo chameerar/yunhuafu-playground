@@ -1,1 +1,3 @@
 .DS_Store
+# some files are kept in bin/
+obj/
