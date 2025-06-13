@@ -129,6 +129,24 @@ button:hover {
     background-color: #0056b3;
 }
 
+.login-btn {
+    background-color: #28a745;
+    font-weight: bold;
+}
+
+.login-btn:hover {
+    background-color: #218838;
+}
+
+.logout-btn {
+    background-color: #6c757d;
+    font-weight: bold;
+}
+
+.logout-btn:hover {
+    background-color: #5a6268;
+}
+
 .result {
     padding: 15px;
     border-radius: 4px;
