@@ -8,7 +8,7 @@ const auth0 = new Auth0Client({
 // Initialize Google API
 function initGoogleAPI() {
     return new Promise((resolve, reject) => {
-        gapi.load('client:auth2', () => {
+        gapi.load("client:auth2", () => {
             gapi.client.init({
                 apiKey: config.google.apiKey,
                 clientId: config.google.clientId,
@@ -22,8 +22,8 @@ function initGoogleAPI() {
 initGoogleAPI().catch(console.error);
 
 // Auth0 Backend API Call
-document.getElementById('auth0BackendBtn').addEventListener('click', async () => {
-    const resultDiv = document.getElementById('auth0BackendResult');
+document.getElementById("auth0BackendBtn").addEventListener("click", async () => {
+    const resultDiv = document.getElementById("auth0BackendResult");
     try {
         // Check if we have a token
         const token = await auth0.getTokenSilently();
@@ -36,7 +36,7 @@ document.getElementById('auth0BackendBtn').addEventListener('click', async () =>
         // Call the backend API with the token
         const response = await fetch(config.backendApi.url, {
             headers: {
-                'Authorization': `Bearer ${token}`
+                "Authorization": `Bearer ${token}`
             }
         });
         const data = await response.json();
@@ -47,8 +47,8 @@ document.getElementById('auth0BackendBtn').addEventListener('click', async () =>
 });
 
 // Auth0 Google Drive API Call
-document.getElementById('auth0DriveBtn').addEventListener('click', async () => {
-    const resultDiv = document.getElementById('auth0DriveResult');
+document.getElementById("auth0DriveBtn").addEventListener("click", async () => {
+    const resultDiv = document.getElementById("auth0DriveResult");
     try {
         // Check if we have a token
         const token = await auth0.getTokenSilently();
@@ -59,9 +59,9 @@ document.getElementById('auth0DriveBtn').addEventListener('click', async () => {
         }
 
         // Call Google Drive API through Auth0
-        const response = await fetch('https://YOUR_AUTH0_DOMAIN/api/v2/users/me', {
+        const response = await fetch("https://YOUR_AUTH0_DOMAIN/api/v2/users/me", {
             headers: {
-                'Authorization': `Bearer ${token}`
+                "Authorization": `Bearer ${token}`
             }
         });
         const data = await response.json();
