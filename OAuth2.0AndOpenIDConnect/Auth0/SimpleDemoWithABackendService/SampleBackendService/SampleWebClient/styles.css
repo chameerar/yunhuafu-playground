@@ -1,3 +1,8 @@
+html {
+    height: 100%;
+    overflow-y: auto;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,42 +11,39 @@
 
 body {
     font-family: Arial, sans-serif;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100%;
+    overflow-y: auto;
+    position: relative;
 }
 
-.auth-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-.auth-container > .auth-section {
-    flex: 1;
+.auth-section {
+    min-height: 400px;
     display: flex !important;
     flex-direction: row !important;
     background-color: #f8f9fa;
     border-bottom: 1px solid #ccc;
 }
 
-.auth-container > .auth-section:last-child {
+.auth-section:last-child {
     border-bottom: none;
 }
 
-.auth-container > .auth-section > .section-left {
+.section-left {
     width: 50%;
     padding: 20px;
     background-color: #e9ecef;
+    overflow-y: auto;
 }
 
-.auth-container > .auth-section > .section-right {
+.section-right {
     width: 50%;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: #e9ecef;
+    overflow-y: auto;
 }
 
 h2 {

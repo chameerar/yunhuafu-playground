@@ -7,77 +7,77 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="auth-container">
-        <!-- Auth0 with Custom Backend Section -->
-        <section class="auth-section" id="auth0-backend">
-            <div class="section-left">
-                <h3>Auth0 + Custom Backend</h3>
-                <p>This section demonstrates authentication with Auth0 and calling your custom backend APIs.</p>
+    <!-- Auth0 with Custom Backend Section -->
+    <section class="auth-section" id="auth0-backend">
+        <div class="section-left">
+            <h3>Auth0 + Custom Backend</h3>
+            <p>This section demonstrates authentication with Auth0 and calling your custom backend APIs.</p>
+            <ul>
+                <li>Auth0: Auth0 account -> domain, Application -> Client ID, [Client Secret], Set of backend services (APIs), Allowed Callback URLs</li>
+                <li>Client submit request to Auth0: If there is no identiy yet or no token, it is not authenticated/authorized -> Auth0 auth URl, Request ID token and access token with desired "audience" or "scope" of required backend APIs</li>
+                <li>Client receives response from Auth0, then use the JWTtoken to get user information and call backend APIs:
                 <ul>
-                    <li>Auth0: Auth0 account -> domain, Application -> Client ID, [Client Secret], Set of backend services (APIs), Allowed Callback URLs</li>
-                    <li>Client submit request to Auth0: If there is no identiy yet or no token, it is not authenticated/authorized -> Auth0 auth URl, Request ID token and access token with desired "audience" or "scope" or "resources" of required backend APIs</li>
-                    <li>Client receives response from Auth0, then use the JWTtoken to get user information and call backend APIs:
-                    <ul>
-                        <li>Claims that Auth0 Use to Authenticate: Sub(subject), Name, Email, Picture, etc</li>
-                        <li>Claims that Auth0 Use to Authorize: Audience (backend API should check this, https://api1.example.com), Scope (multiple APIs, "read:messages write:files"), permissions</li>
-                        <li>Claim: permissions (Optional — for RBAC in Auth0), More granular than scope
-                            <ul>
-                                <li>Only present if:
-                                    <ul>
-                                        <li>RBAC is enabled</li>
-                                        <li>“Add permissions in the access token” is checked in Auth0 API settings</li>
-                                    </ul>
+                    <li>Claims that Auth0 Use to Authenticate: Sub(subject), Name, Email, Picture, etc</li>
+                    <li>Claims that Auth0 Use to Authorize: Audience (backend API should check this, https://api1.example.com), Scope (multiple APIs, "read:messages write:files"), permissions</li>
+                    <li>Claim: permissions (Optional — for RBAC in Auth0), More granular than scope
+                        <ul>
+                            <li>Only present if:
+                                <ul>
+                                    <li>RBAC is enabled</li>
+                                    <li>"Add permissions in the access token" is checked in Auth0 API settings</li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                 </ul>
-            </div>
-            <div class="section-right">
-                <h2>Auth0 + Custom Backend</h2>
-                <button id="auth0BackendBtn">Call Custom Backend API</button>
-                <div id="auth0BackendResult" class="result"></div>
-                <button id="auth0BackendBtn2">Call Custom Backend 2 API</button>
-                <div id="auth0BackendResult2" class="result"></div>
-            </div>
-        </section>
+                </li>
+            </ul>
+        </div>
+        <div class="section-right">
+            <h2>Auth0 + Custom Backend</h2>
+            <button id="auth0BackendBtn">Call Custom Backend API</button>
+            <div id="auth0BackendResult" class="result"></div>
+            <button id="auth0BackendBtn2">Call Custom Backend 2 API</button>
+            <div id="auth0BackendResult2" class="result"></div>
+        </div>
+    </section>
 
-        <!-- Auth0 with Google Drive Section -->
-        <section class="auth-section" id="auth0-drive">
-            <div class="section-left">
-                <h3>Auth0 + Google Drive</h3>
-                <p>This section shows how to use Auth0 to access Google Drive API.</p>
-                <ul>
-                    <li>Uses Auth0 as identity provider</li>
-                    <li>Accesses Google Drive through Auth0</li>
-                    <li>Shows user profile information</li>
-                </ul>
-            </div>
-            <div class="section-right">
-                <h2>Auth0 + Google Drive</h2>
-                <button id="auth0DriveBtn">Call Google Drive API (via Auth0)</button>
-                <div id="auth0DriveResult" class="result"></div>
-            </div>
-        </section>
+    <!-- Auth0 with Google Drive Section -->
+    <section class="auth-section" id="auth0-drive">
+        <div class="section-left">
+            <h3>Auth0 + Google Drive</h3>
+            <p>This section shows how to use Auth0 to access Google Drive API.</p>
+            <ul>
+                <li>Uses Auth0 as identity provider</li>
+                <li>Accesses Google Drive through Auth0</li>
+                <li>Shows user profile information</li>
+            </ul>
+        </div>
+        <div class="section-right">
+            <h2>Auth0 + Google Drive</h2>
+            <button id="auth0DriveBtn">Call Google Drive API (via Auth0)</button>
+            <div id="auth0DriveResult" class="result"></div>
+        </div>
+    </section>
 
-        <!-- Direct Google Drive Section -->
-        <section class="auth-section" id="google-drive">
-            <div class="section-left">
-                <h3>Direct Google Drive</h3>
-                <p>This section demonstrates direct Google authentication and Drive API access.</p>
-                <ul>
-                    <li>Uses Google OAuth directly</li>
-                    <li>Accesses Google Drive API</li>
-                    <li>Lists files from your Drive</li>
-                </ul>
-            </div>
-            <div class="section-right">
-                <h2>Direct Google Drive</h2>
-                <button id="googleDriveBtn">Call Google Drive API (Direct)</button>
-                <div id="googleDriveResult" class="result"></div>
-            </div>
-        </section>
-    </div>
+    <!-- Direct Google Drive Section -->
+    <section class="auth-section" id="google-drive">
+        <div class="section-left">
+            <h3>Direct Google Drive</h3>
+            <p>This section demonstrates direct Google authentication and Drive API access.</p>
+            <ul>
+                <li>Uses Google OAuth directly</li>
+                <li>Accesses Google Drive API</li>
+                <li>Lists files from your Drive</li>
+            </ul>
+        </div>
+        <div class="section-right">
+            <h2>Direct Google Drive</h2>
+            <button id="googleDriveBtn">Call Google Drive API (Direct)</button>
+            <div id="googleDriveResult" class="result"></div>
+        </div>
+    </section>
+
     <script src="https://cdn.auth0.com/js/auth0/9.22.2/auth0.min.js"></script>
     <script src="https://apis.google.com/js/api.js"></script>
     <script src="config.js"></script>
