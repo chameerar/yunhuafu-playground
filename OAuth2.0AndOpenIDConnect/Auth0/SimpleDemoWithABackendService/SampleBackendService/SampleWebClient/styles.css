@@ -18,10 +18,11 @@ body {
 
 .auth-section {
     min-height: 400px;
-    display: flex !important;
-    flex-direction: row !important;
+    display: flex;
+    flex-direction: row;
     background-color: #f8f9fa;
     border-bottom: 1px solid #ccc;
+    width: 100%;
 }
 
 .auth-section:last-child {
@@ -30,6 +31,8 @@ body {
 
 .section-left {
     width: 50%;
+    min-width: 50%;
+    max-width: 50%;
     padding: 20px;
     background-color: #e9ecef;
     overflow-y: auto;
@@ -37,6 +40,8 @@ body {
 
 .section-right {
     width: 50%;
+    min-width: 50%;
+    max-width: 50%;
     padding: 20px;
     display: flex;
     flex-direction: column;
