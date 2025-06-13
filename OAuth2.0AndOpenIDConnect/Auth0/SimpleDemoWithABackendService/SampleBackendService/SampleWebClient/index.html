@@ -12,11 +12,25 @@
         <section class="auth-section" id="auth0-backend">
             <div class="section-left">
                 <h3>Auth0 + Custom Backend</h3>
-                <p>This section demonstrates authentication with Auth0 and calling your custom backend API.</p>
+                <p>This section demonstrates authentication with Auth0 and calling your custom backend APIs.</p>
                 <ul>
-                    <li>Uses Auth0 for authentication</li>
-                    <li>Calls your local backend API</li>
-                    <li>Shows weather forecast data</li>
+                    <li>Auth0: Auth0 account -> domain, Application -> Client ID, [Client Secret], Set of backend services (APIs), Allowed Callback URLs</li>
+                    <li>Client submit request to Auth0: If there is no identiy yet or no token, it is not authenticated/authorized -> Auth0 auth URl, Request ID token and access token with desired "audience" or "scope" or "resources" of required backend APIs</li>
+                    <li>Client receives response from Auth0, then use the JWTtoken to get user information and call backend APIs:
+                    <ul>
+                        <li>Claims that Auth0 Use to Authenticate: Sub(subject), Name, Email, Picture, etc</li>
+                        <li>Claims that Auth0 Use to Authorize: Audience (backend API should check this, https://api1.example.com), Scope (multiple APIs, "read:messages write:files"), permissions</li>
+                        <li>Claim: permissions (Optional — for RBAC in Auth0), More granular than scope
+                            <ul>
+                                <li>Only present if:
+                                    <ul>
+                                        <li>RBAC is enabled</li>
+                                        <li>“Add permissions in the access token” is checked in Auth0 API settings</li>
+                                    </ul>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div class="section-right">
