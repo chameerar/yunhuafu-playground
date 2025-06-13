@@ -7,26 +7,61 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="auth-container">
         <!-- Auth0 with Custom Backend Section -->
         <section class="auth-section" id="auth0-backend">
-            <h2>Auth0 + Custom Backend</h2>
-            <button id="auth0BackendBtn">Call Custom Backend API</button>
-            <div id="auth0BackendResult" class="result"></div>
+            <div class="section-left">
+                <h3>Auth0 + Custom Backend</h3>
+                <p>This section demonstrates authentication with Auth0 and calling your custom backend API.</p>
+                <ul>
+                    <li>Uses Auth0 for authentication</li>
+                    <li>Calls your local backend API</li>
+                    <li>Shows weather forecast data</li>
+                </ul>
+            </div>
+            <div class="section-right">
+                <h2>Auth0 + Custom Backend</h2>
+                <button id="auth0BackendBtn">Call Custom Backend API</button>
+                <div id="auth0BackendResult" class="result"></div>
+                <button id="auth0BackendBtn2">Call Custom Backend 2 API</button>
+                <div id="auth0BackendResult2" class="result"></div>
+            </div>
         </section>
 
         <!-- Auth0 with Google Drive Section -->
         <section class="auth-section" id="auth0-drive">
-            <h2>Auth0 + Google Drive</h2>
-            <button id="auth0DriveBtn">Call Google Drive API (via Auth0)</button>
-            <div id="auth0DriveResult" class="result"></div>
+            <div class="section-left">
+                <h3>Auth0 + Google Drive</h3>
+                <p>This section shows how to use Auth0 to access Google Drive API.</p>
+                <ul>
+                    <li>Uses Auth0 as identity provider</li>
+                    <li>Accesses Google Drive through Auth0</li>
+                    <li>Shows user profile information</li>
+                </ul>
+            </div>
+            <div class="section-right">
+                <h2>Auth0 + Google Drive</h2>
+                <button id="auth0DriveBtn">Call Google Drive API (via Auth0)</button>
+                <div id="auth0DriveResult" class="result"></div>
+            </div>
         </section>
 
         <!-- Direct Google Drive Section -->
         <section class="auth-section" id="google-drive">
-            <h2>Direct Google Drive</h2>
-            <button id="googleDriveBtn">Call Google Drive API (Direct)</button>
-            <div id="googleDriveResult" class="result"></div>
+            <div class="section-left">
+                <h3>Direct Google Drive</h3>
+                <p>This section demonstrates direct Google authentication and Drive API access.</p>
+                <ul>
+                    <li>Uses Google OAuth directly</li>
+                    <li>Accesses Google Drive API</li>
+                    <li>Lists files from your Drive</li>
+                </ul>
+            </div>
+            <div class="section-right">
+                <h2>Direct Google Drive</h2>
+                <button id="googleDriveBtn">Call Google Drive API (Direct)</button>
+                <div id="googleDriveResult" class="result"></div>
+            </div>
         </section>
     </div>
     <script src="https://cdn.auth0.com/js/auth0/9.22.2/auth0.min.js"></script>
