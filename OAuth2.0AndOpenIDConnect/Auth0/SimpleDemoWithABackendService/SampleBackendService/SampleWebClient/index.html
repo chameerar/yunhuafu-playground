@@ -96,26 +96,27 @@
         </div>
         <div class="section-right">
             <div class="button-area">
-                <button id="googleDriveLoginBtn" class="login-btn">Login with Google</button>
-                <button id="googleDriveBtn">Call Google Drive API</button>
-                <button id="googleDriveLogoutBtn" class="logout-btn">Logout</button>
+                <button id="authWithGoogleLoginBtn" class="login-btn">Login with Google</button>
+                <button id="authWithGoogleCallGoogleDriveBtn">Call Google Drive API</button>
+                <button id="authWithGoogleLogoutBtn" class="logout-btn">Logout</button>
             </div>
             <div class="content-area">
                 <div class="request-info">
                     <div class="area-label">Request</div>
-                    <div id="googleDriveResult" class="result"></div>
+                    <div id="authWithGoogleRequest" class="result"></div>
                 </div>
                 <div class="response-info">
                     <div class="area-label">Response</div>
-                    <div class="result"></div>
+                    <div id="authWithGoogleResponse" class="result"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <script src="https://cdn.auth0.com/js/auth0/9.22.2/auth0.min.js"></script>
-    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="config.js"></script>
     <script src="script.js"></script>
+    <script src="authWithGoogle.js"></script>
 </body>
 </html> 

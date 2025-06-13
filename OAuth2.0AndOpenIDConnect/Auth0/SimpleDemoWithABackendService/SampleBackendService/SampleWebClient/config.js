@@ -6,9 +6,9 @@ const config = {
         redirectUri: window.location.origin
     },
     google: {
-        clientId: 'YOUR_GOOGLE_CLIENT_ID',
+        clientId: '335342063380-k6kqqj1utoahs5jhr8rakg870bb3ot4b.apps.googleusercontent.com',
         apiKey: 'YOUR_GOOGLE_API_KEY',
-        scopes: 'https://www.googleapis.com/auth/drive.readonly'
+        scopes: 'openid profile email https://www.googleapis.com/auth/drive.readonly'
     },
     backendApi: {
         url: 'https://localhost:5266/weatherforecast'

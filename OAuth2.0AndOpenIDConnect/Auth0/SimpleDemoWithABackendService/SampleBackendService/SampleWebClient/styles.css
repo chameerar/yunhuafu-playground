@@ -153,6 +153,7 @@ button:hover {
     background-color: #f8f9fa;
     min-height: 100px;
     word-wrap: break-word;
+    white-space: pre-wrap; /* for pretty print for json */
 }
 
 .info-content {

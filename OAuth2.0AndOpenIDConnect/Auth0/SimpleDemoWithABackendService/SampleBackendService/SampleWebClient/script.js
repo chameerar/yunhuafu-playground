@@ -71,25 +71,3 @@ document.getElementById('auth0DriveBtn').addEventListener('click', async () => {
     }
 });
 
-// Direct Google Drive API Call
-document.getElementById('googleDriveBtn').addEventListener('click', async () => {
-    const resultDiv = document.getElementById('googleDriveResult');
-    try {
-        // Check if user is signed in
-        const isSignedIn = gapi.auth2.getAuthInstance().isSignedIn.get();
-        if (!isSignedIn) {
-            // If not signed in, trigger Google sign-in
-            await gapi.auth2.getAuthInstance().signIn();
-            return;
-        }
-
-        // Call Google Drive API directly
-        const response = await gapi.client.drive.files.list({
-            'pageSize': 10,
-            'fields': 'files(id, name)'
-        });
-        resultDiv.textContent = JSON.stringify(response.result, null, 2);
-    } catch (error) {
-        resultDiv.textContent = `Error: ${error.message}`;
-    }
-}); 
