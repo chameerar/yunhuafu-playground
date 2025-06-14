@@ -1,5 +1,5 @@
-let tokenClientForGoogle;
-let tokenForGoogle;
+let tokenClientForGoogle = null;
+let tokenForGoogle = null;
 
 // document.getElementById('authWithGoogleLoginBtn').addEventListener('click', async () => {
 //     const responseDiv = document.getElementById('authWithGoogleResponse');
@@ -19,16 +19,19 @@ let tokenForGoogle;
 // });
 
  document.getElementById('authWithGoogleLoginBtn').addEventListener('click', async () => {
+    if (tokenForGoogle) {
+        return;
+    }
     const popupWidth = window.outerWidth/2;
     const popupHeight = window.outerHeight/2;
     const left = window.screenX + (window.outerWidth - popupWidth) / 2;
     const top = window.screenY + (window.outerHeight - popupHeight) / 2;
 
-    const authUrl = 'https://accounts.google.com/o/oauth2/v2/auth?' + new URLSearchParams({
+    const authUrl = config.google.authUrl + new URLSearchParams({
         client_id: config.google.clientId,
-        redirect_uri: 'http://localhost:8080/oauth-callback.html',
+        redirect_uri: config.google.redirect_uri,
         response_type: 'token',
-        scope: 'openid email profile',
+        scope: config.google.scopes,
         state: 'secure_random_state',
     });
 
@@ -40,7 +43,7 @@ let tokenForGoogle;
 
     // Listen for message from popup
     window.addEventListener('message', (event) => {
-      if (event.origin !== 'http://localhost:8080') return; // Replace with your app’s origin
+      if (event.origin !== config.google.event_origin) return; // Replace with your app’s origin
       const { access_token } = event.data;
       if (access_token) {
         tokenForGoogle = access_token;
@@ -91,7 +94,7 @@ document.getElementById('authWithGoogleLogoutBtn').addEventListener('click', asy
   
     // Open Google logout in a centered popup
     const win = window.open(
-      'https://accounts.google.com/Logout',
+      config.google.logoutUrl,
       'GoogleLogoutWindow',
       `width=${popupWidth},height=${popupHeight},left=${left},top=${top},resizable=no,scrollbars=yes`
     );
@@ -99,7 +102,7 @@ document.getElementById('authWithGoogleLogoutBtn').addEventListener('click', asy
   
     // Step 3: After a few seconds, redirect user manually (best-effort)
     setTimeout(() => {
-      window.location.href = '/index.html'; // or your desired landing page
+        window.location.href = '/index.html'; // or your desired landing page
     }, 2000); // give Google logout a moment to run
 });
   

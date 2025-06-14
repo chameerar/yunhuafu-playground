@@ -7,7 +7,10 @@ const config = {
     },
     google: {
         clientId: "335342063380-k6kqqj1utoahs5jhr8rakg870bb3ot4b.apps.googleusercontent.com",
-        apiKey: "YOUR_GOOGLE_API_KEY",
+        authUrl: 'https://accounts.google.com/o/oauth2/v2/auth?',
+        logoutUrl: 'https://accounts.google.com/Logout',
+        event_origin: 'http://localhost:8080',
+        redirect_uri: 'http://localhost:8080/oauth-callback.html',
         scopes: "openid profile email https://www.googleapis.com/auth/drive.readonly",
         userInfoAPI: "https://www.googleapis.com/oauth2/v3/userinfo", 
         driveAPI: "https://www.googleapis.com/drive/v3/files" 
