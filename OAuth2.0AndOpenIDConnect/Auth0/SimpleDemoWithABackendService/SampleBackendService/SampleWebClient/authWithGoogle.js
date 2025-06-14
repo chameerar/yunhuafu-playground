@@ -1,9 +1,8 @@
-
 let tokenClientForGoogle;
 let tokenForGoogle;
 
-document.getElementById("authWithGoogleLoginBtn").addEventListener("click", async () => {
-    const responseDiv = document.getElementById("authWithGoogleResponse");
+document.getElementById('authWithGoogleLoginBtn').addEventListener('click', async () => {
+    const responseDiv = document.getElementById('authWithGoogleResponse');
     try {
         tokenClientForGoogle = google.accounts.oauth2.initTokenClient({
             client_id: config.google.clientId,
@@ -19,15 +18,30 @@ document.getElementById("authWithGoogleLoginBtn").addEventListener("click", asyn
     }
 });
 
-document.getElementById("authWithGoogleCallGoogleDriveBtn").addEventListener("click", async () => {
-    const responseDiv = document.getElementById("authWithGoogleResponse");
-        fetch(config.google.driveAPI, {headers:{
+document.getElementById('authWithGoogleCallGoogleUserInfoBtn').addEventListener('click', async () => {
+    const responseDiv = document.getElementById('authWithGoogleResponse');
+        fetch(config.google.userInfoAPI, {headers:{
             Authorization: `Bearer ${tokenForGoogle}`
-        }}).        then(res => res.json())
+        }}).then(res => res.json())
         .then(data=>{
             responseDiv.textContent = JSON.stringify(data, null, 2);
         })
         .catch(error=>{
             responseDiv.textContent = `Error: ${error.message}`;
         });
+
+});
+
+document.getElementById('authWithGoogleCallGoogleDriveBtn').addEventListener('click', async () => {
+    const responseDiv = document.getElementById('authWithGoogleResponse');
+        fetch(config.google.driveAPI, {headers:{
+            Authorization: `Bearer ${tokenForGoogle}`
+        }}).then(res => res.json())
+        .then(data=>{
+            responseDiv.textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(error=>{
+            responseDiv.textContent = `Error: ${error.message}`;
+        });
+
 });
