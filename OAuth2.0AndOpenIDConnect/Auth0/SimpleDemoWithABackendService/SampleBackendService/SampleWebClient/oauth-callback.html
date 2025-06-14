@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OAuth Callback</title>
+</head>
+<body>
+    <script>
+        // Get the access token from the URL hash
+        const hash = window.location.hash.substring(1);
+        const params = new URLSearchParams(hash);
+        const access_token = params.get('access_token');
+
+        if (access_token) {
+            // Send the token back to the parent window
+            window.opener.postMessage({ access_token }, 'http://localhost:8080');
+            // Close the popup
+            window.close();
+        }
+    </script>
+</body>
+</html> 
