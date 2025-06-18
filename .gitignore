@@ -1,6 +1,8 @@
 .DS_Store
 
-# some files are kept in bin/
+# some files are kept in bin folder, use !bin/ in child folder to keep it
+bin/ 
+
 obj/
 
 node_modules/
