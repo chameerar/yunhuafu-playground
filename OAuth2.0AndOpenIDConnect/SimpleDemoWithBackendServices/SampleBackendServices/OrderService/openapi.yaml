@@ -18,6 +18,8 @@ paths:
                 type: array
                 items:
                   "$ref": "#/components/schemas/WeatherForecast"
+      deprecated: false
+      security: []
 components:
   schemas:
     WeatherForecast:
@@ -37,3 +39,5 @@ components:
           format: int32
           readOnly: true
       additionalProperties: false
+
+      
