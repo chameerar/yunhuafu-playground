@@ -1,3 +1,5 @@
+# This file is intended to be used by WSO2 Choreo, but It is possible that Choreo ignores this file when it is a .Net project.
+
 # Copyright (c) 2024, WSO2 LLC. (https://www.wso2.com/) All Rights Reserved.
 #
 # WSO2 LLC. licenses this file to you under the Apache License,
@@ -54,5 +56,6 @@ RUN adduser \
 USER 10014
 
 # Set the entrypoint to the executable
-ENV ASPNETCORE_URLS=http://+:5252
+# It is possible that Choreo ignores this file when it is a .Net project, it will use the default port 5000 
+# ENV ASPNETCORE_URLS=http://+:5252
 ENTRYPOINT ["./OrderService"]
