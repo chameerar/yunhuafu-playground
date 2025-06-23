@@ -6,7 +6,7 @@ const config = {
         redirectUri: window.location.origin
     },
     google: {
-        clientId: "335342063380-k6kqqj1utoahs5jhr8rakg870bb3ot4b.apps.googleusercontent.com",
+        clientId: "YourGoogleClientId",
         authUrl: 'https://accounts.google.com/o/oauth2/v2/auth?',
         logoutUrl: 'https://accounts.google.com/Logout',
         event_origin: 'http://localhost:8080',
