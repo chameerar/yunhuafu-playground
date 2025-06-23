@@ -57,5 +57,5 @@ USER 10014
 
 # Set the entrypoint to the executable
 # It is possible that Choreo ignores this file when it is a .Net project, it will use the default port 5000 
-# ENV ASPNETCORE_URLS=http://+:5252
+ENV ASPNETCORE_URLS=http://+:5252
 ENTRYPOINT ["./OrderService"]
